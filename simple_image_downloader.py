@@ -1,3 +1,5 @@
+# downloads images with relative URLs, very buggy but worked for my specific use case
+
 import urllib.request, requests, re
 from bs4 import BeautifulSoup
 #input validation
