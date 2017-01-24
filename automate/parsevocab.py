@@ -11,14 +11,10 @@ def parse_vocab(file, dir):
     vocab_length = int(len(vocab_file))
     split_length = int(vocab_length / 2)
     if vocab_length % 2 != 0:
-        return ValueError("input file cannot be evenly split")
+        raise ValueError("input file cannot be evenly split")
     # begin processing
     vocab_fr = vocab_file[:vocab_length//2]
     vocab_en = vocab_file[vocab_length//2:]
-    for word in vocab_fr:
-        word.rstrip()
-    for word in vocab_en:
-        word.rstrip()
     vocab_final = []
     for i in range(0, split_length):
         vocab_final.append(str(vocab_fr[i]) + '|' + str(vocab_en[i]))
